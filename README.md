@@ -4,7 +4,6 @@
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/abandonware/noble?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![OpenCollective](https://opencollective.com/noble/backers/badge.svg)](#backers)
 [![OpenCollective](https://opencollective.com/noble/sponsors/badge.svg)](#sponsors)
 
-
 A Node.js BLE (Bluetooth Low Energy) central module.
 
 Want to implement a peripheral? Checkout [bleno](https://github.com/abandonware/bleno)
@@ -15,12 +14,12 @@ __Note:__ macOS / Mac OS X, Linux, FreeBSD and Windows are currently the only su
 
 ### OS X
 
- * install [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)
+* install [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)
 
 ### Linux
 
- * Kernel version 3.6 or above
- * ```libbluetooth-dev```
+* Kernel version 3.6 or above
+* ```libbluetooth-dev```
 
 #### Ubuntu/Debian/Raspbian
 
@@ -29,8 +28,9 @@ sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev
 ```
 
 Make sure ```node``` is on your path, if it's not, some options:
- * symlink ```nodejs``` to ```node```: ```sudo ln -s /usr/bin/nodejs /usr/bin/node```
- * [install Node.js using the NodeSource package](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+
+* symlink ```nodejs``` to ```node```: ```sudo ln -s /usr/bin/nodejs /usr/bin/node```
+* [install Node.js using the NodeSource package](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
 #### Fedora / Other-RPM based
 
@@ -71,8 +71,9 @@ npm install --global --production windows-build-tools
 ```
 
 [node-bluetooth-hci-socket prerequisites](https://github.com/abandonware/node-bluetooth-hci-socket#windows)
-   * Compatible Bluetooth 4.0 USB adapter
-   * [WinUSB](https://msdn.microsoft.com/en-ca/library/windows/hardware/ff540196(v=vs.85).aspx) driver setup for Bluetooth 4.0 USB adapter, using [Zadig tool](http://zadig.akeo.ie/)
+
+* Compatible Bluetooth 4.0 USB adapter
+* [WinUSB](https://msdn.microsoft.com/en-ca/library/windows/hardware/ff540196(v=vs.85).aspx) driver setup for Bluetooth 4.0 USB adapter, using [Zadig tool](http://zadig.akeo.ie/)
 
 See [@don](https://github.com/don)'s set up guide on [Bluetooth LE with Node.js and Noble on Windows](https://www.youtube.com/watch?v=mL9B8wuEdms&feature=youtu.be&t=1m46s)
 
@@ -82,9 +83,9 @@ See [@don](https://github.com/don)'s set up guide on [Bluetooth LE with Node.js 
 
 This limit is imposed upon by the Bluetooth adapter hardware as well as it's firmware.
 
-| Platform |     |
-| :------- | --- |
-| OS X 10.11 (El Capitan) | 6 |
+| Platform                          |                       |
+| :-------------------------------- | --------------------- |
+| OS X 10.11 (El Capitan)           | 6                     |
 | Linux/Windows - Adapter dependent | 5 (CSR based adapter) |
 
 ### Adapter specific known issues
@@ -142,10 +143,16 @@ noble.stopScanning();
 peripheral.connect([callback(error)]);
 ```
 
-##### Disconnect or cancel pending connection
+##### Disconnect
 
 ```javascript
 peripheral.disconnect([callback(error)]);
+```
+
+##### Cancel pending connection
+
+```javascript
+peripheral.cancelConnect();
 ```
 
 ##### Update RSSI
@@ -176,6 +183,7 @@ var serviceUUIDs = ["<service UUID 1>", ...];
 var characteristicUUIDs = ["<characteristic UUID 1>", ...];
 peripheral.discoverSomeServicesAndCharacteristics(serviceUUIDs, characteristicUUIDs, [callback(error, services, characteristics));
 ```
+
 #### Service
 
 ##### Discover included services
@@ -226,8 +234,8 @@ characteristic.broadcast(broadcast[, callback(error)]); // broadcast is true|fal
 characteristic.subscribe([callback(error)]);
 ```
 
-  * subscribe to a characteristic, triggers `'data'` events when peripheral sends an notification or indication
-  * use for characteristics with notify or indicate properties
+* subscribe to a characteristic, triggers `'data'` events when peripheral sends an notification or indication
+* use for characteristics with notify or indicate properties
 
 ##### Unsubscribe
 
@@ -235,8 +243,8 @@ characteristic.subscribe([callback(error)]);
 characteristic.unsubscribe([callback(error)]);
 ```
 
-  * unsubscribe to a characteristic
-  * use for characteristics with notify or indicate properties
+* unsubscribe to a characteristic
+* use for characteristics with notify or indicate properties
 
 ##### Discover descriptors
 
@@ -282,7 +290,7 @@ state = <"unknown" | "resetting" | "unsupported" | "unauthorized" | "poweredOff"
 noble.on('stateChange', callback(state));
 ```
 
-#### Scan started:
+#### Scan started
 
 ```javascript
 noble.on('scanStart', callback);
@@ -342,7 +350,7 @@ noble.on('warning', callback(message));
 peripheral.once('connect', callback);
 ```
 
-##### Disconnected:
+##### Disconnected
 
 ```javascript
 peripheral.once('disconnect', callback);
@@ -456,8 +464,8 @@ This grants the ```node``` binary ```cap_net_raw``` privileges, so it can start/
 
 __Note:__ The above command requires ```setcap``` to be installed, it can be installed using the following:
 
- * apt: ```sudo apt-get install libcap2-bin```
- * yum: ```su -c \'yum install libcap2-bin\'```
+* apt: ```sudo apt-get install libcap2-bin```
+* yum: ```su -c \'yum install libcap2-bin\'```
 
 ### Multiple Adapters
 
@@ -569,9 +577,9 @@ Become a sponsor and get your logo on our README on Github with a link to your s
 
 ## Useful Links
 
- * [Bluetooth Development Portal](http://developer.bluetooth.org)
-   * [GATT Specifications](http://developer.bluetooth.org/gatt/Pages/default.aspx)
- * [Bluetooth: ATT and GATT](http://epx.com.br/artigos/bluetooth_gatt.php)
+* [Bluetooth Development Portal](http://developer.bluetooth.org)
+  * [GATT Specifications](http://developer.bluetooth.org/gatt/Pages/default.aspx)
+* [Bluetooth: ATT and GATT](http://epx.com.br/artigos/bluetooth_gatt.php)
 
 ## License
 
