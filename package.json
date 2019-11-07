@@ -2,18 +2,19 @@
   "author": "Sandeep Mistry",
   "maintainers": [
     "Jacob Rosenthal",
-    "Luis Montes"
+    "Luis Montes",
+    "Pruthvikar Reddy"
   ],
   "license": "MIT",
-  "name": "@abandonware/noble",
+  "name": "@pruthvikar/noble",
   "description": "A Node.js BLE (Bluetooth Low Energy) central library.",
-  "version": "1.9.2-5",
+  "version": "1.10.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abandonware/noble.git"
+    "url": "https://github.com/pruthvikar/noble.git"
   },
   "bugs": {
-    "url": "https://github.com/abandonware/noble/issues"
+    "url": "https://github.com/pruthvikar/noble/issues"
   },
   "keywords": [
     "bluetooth",
