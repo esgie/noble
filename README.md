@@ -135,6 +135,12 @@ __NOTE:__ ```noble.state``` must be ```poweredOn``` before scanning is started. 
 noble.stopScanning();
 ```
 
+##### Cancel pending connection
+
+```javascript
+noble.cancelConnect();
+```
+
 #### Peripheral
 
 ##### Connect
@@ -147,12 +153,6 @@ peripheral.connect([callback(error)]);
 
 ```javascript
 peripheral.disconnect([callback(error)]);
-```
-
-##### Cancel pending connection
-
-```javascript
-peripheral.cancelConnect();
 ```
 
 ##### Update RSSI
