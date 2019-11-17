@@ -101,13 +101,13 @@ You need to stop scanning before trying to connect in order to solve this issue.
 ## Install
 
 ```sh
-npm install @abandonware/noble
+npm install @pruthvikar/noble
 ```
 
 ## Usage
 
 ```javascript
-var noble = require('@abandonware/noble');
+var noble = require('@pruthvikar/noble');
 ```
 
 ### Actions
