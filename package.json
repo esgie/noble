@@ -6,7 +6,7 @@
     "Pruthvikar Reddy"
   ],
   "license": "MIT",
-  "name": "@pruthvikar/noble",
+  "name": "noble",
   "description": "A Node.js BLE (Bluetooth Low Energy) central library.",
   "version": "1.10.7",
   "repository": {
@@ -31,7 +31,8 @@
     "darwin",
     "linux",
     "freebsd",
-    "win32"
+    "win32",
+    "android"
   ],
   "dependencies": {
     "debug": "^4.1.1",
